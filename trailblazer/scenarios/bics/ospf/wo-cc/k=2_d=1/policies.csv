@@ -1,0 +1,2 @@
+type,subnet,specifics,source,Status,Environments,Destinations,Sources
+PolicyType.Reachability,100.0.27.0/24,0,lyon,PolicyStatus.HOLDS,{9},{milan:FastEthernet0/0 (100.0.27.0/24)},lyon

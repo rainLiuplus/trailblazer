@@ -1,0 +1,80 @@
+{
+    "class": "org.batfish.question.specifiers.SpecifiersReachabilityQuestion",
+    "differential": false,
+    "includeOneTableKeys": true,
+    "actions": "${actions}",
+    "headers": "${headers}",
+    "ignoreFilters": "${ignoreFilters}",
+    "invertSearch": "${invertSearch}",
+    "maxTraces": "${maxTraces}",
+    "pathConstraints": "${pathConstraints}",
+    "instance": {
+        "description": "Find flows that match the ingress and egress location, src and dest ip address and disposition constraints, as described by the input specifiers.",
+        "instanceName": "reachability",
+        "tags": [
+            "dataPlane",
+            "reachability"
+        ],
+        "variables": {
+            "actions": {
+                "description": "Only return flows for which the disposition is from this set",
+                "optional": true,
+                "type": "dispositionSpec",
+                "value": "success",
+                "displayName": "Actions"
+            },
+            "headers": {
+                "description": "Packet header constraints",
+                "optional": true,
+                "type": "headerConstraint",
+                "displayName": "Headers",
+                "fields": {
+                    "applications": { "optional": true },
+                    "dscps": { "optional": true },
+                    "dstIps": { "optional": true },
+                    "dstPorts": { "optional": true },
+                    "ecns": { "optional": true },
+                    "flowStates": { "optional": true },
+                    "fragmentOffsets": { "optional": true },
+                    "icmpCodes": { "optional": true },
+                    "icmpTypes": { "optional": true },
+                    "ipProtocols": { "optional": true },
+                    "packetLengths": { "optional": true },
+                    "srcIps": { "optional": true },
+                    "srcPorts": { "optional": true },
+                    "tcpFlags": { "optional": true }
+                }
+            },
+            "ignoreFilters": {
+                "description": "Do not apply filters/ACLs during analysis",
+                "optional": true,
+                "type": "boolean",
+                "displayName": "Ignore Filters"
+            },
+            "invertSearch": {
+                "description": "Search for packet headers outside the specified headerspace, rather than inside the space.",
+                "optional": true,
+                "type": "boolean",
+                "displayName": "Invert Search"
+            },
+            "maxTraces": {
+                "description": "Limit the number of traces returned",
+                "optional": true,
+                "type": "integer",
+                "displayName": "Max Traces"
+            },
+            "pathConstraints": {
+                "description": "Constraint the path a flow can take (start/end/transit locations)",
+                "optional": true,
+                "type": "pathConstraint",
+                "displayName": "Path Constraints",
+                "fields": {
+                    "startLocation": { "optional": true },
+                    "endLocation": { "optional": true },
+                    "transitLocations": { "optional": true },
+                    "forbiddenLocations": { "optional": true }
+                }
+            }
+        }
+    }
+}
