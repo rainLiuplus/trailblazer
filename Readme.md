@@ -1,5 +1,7 @@
 # Trailblazer
 
+Trailblazer is an efficient network verifier that implements the technique described in the paper, "Efficient SMT-based Network Fault Tolerance Verification".
+
 ## Install
 
 1. __Clone this repository__
