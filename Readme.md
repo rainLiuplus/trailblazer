@@ -7,7 +7,7 @@ Trailblazer is an efficient network verifier that implements the technique descr
 1. __Clone this repository__
 
 2. __Build Batfish and Minesweeper__
-Follow the steps described [here](batfish/README.md)
+Follow the steps described [here](https://github.com/batfish/batfish/wiki/Building-and-running-Batfish-service/37e246998d36b4aa3c25132e72daf82981839e81)
 
 3. __Create a conda environment with all requirements__
     ```bash
